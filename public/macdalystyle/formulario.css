@@ -1,0 +1,167 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+.vainanegra{
+    height: 75px;
+    width: 1300px;
+    background-color: black;
+    display: block;
+    margin: auto;
+}
+
+.logo1{
+    width: 45px;
+    margin-right: 400px;
+    margin-left: 150px;
+  
+}
+
+.baja{
+
+    width: 1300px;
+    font-family: 'Raleway', sans-serif;;
+    background-color: black;
+}
+ul{
+    list-style-type: none;
+}
+.navegacion li a{
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    list-style-type: none;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.navegacion > li{
+    float: left;
+}
+
+.navegacion li a:hover{
+    background-color:black;
+    -moz-transition: .0.6s linear;
+    -webkit-transition: 0.6s ease-out;
+    transition: 0.6s linear;
+}
+
+.navegacion li ul{
+    display:none ;
+    position: absolute;
+    min-width: 140px;
+}
+
+.navegacion li:hover > ul{
+    display: block;
+}
+
+li a.active {
+    background-color: #2d2d2d;
+    color: white;
+  }
+
+  .navegacion li a:hover{
+    background-color:#2d2d2d;
+    -moz-transition: .0.6s linear;
+    -webkit-transition: 0.6s ease-out;
+    transition: 0.6s linear;
+}
+
+
+
+
+
+
+body {
+    background: black;
+    color: #fff;
+
+    font-family: 'Quicksand', sans-serif;
+ 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contact-form {
+    background: black;
+}
+
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form label {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+
+}
+
+
+
+.contact-form form p {
+    margin: 0;
+    padding: 1em;
+}
+
+
+
+button{
+    margin-left: 600px;
+}
+
+.block button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    color: black;
+    text-shadow: 1px 1px slategrey;
+    background-color: black;
+    padding: 20px 60px;
+    border-color: cornsilk;
+    border-width: thin;
+    border: none;
+    color: white;
+    text-align:center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.block button:hover{
+    background-color: #2d2d2d;
+    -moz-transition: .0.6s linear;
+    -webkit-transition: 0.6s ease-out;
+    transition: 0.6s linear;
+}
+
+input{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

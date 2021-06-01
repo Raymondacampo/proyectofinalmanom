@@ -1,0 +1,29 @@
+{
+  "name": "proyectofinalmanom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raymondacampo/proyectofinalmanom.git"
+  },
+  "author": "raymond",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raymondacampo/proyectofinalmanom/issues"
+  },
+  "homepage": "https://github.com/Raymondacampo/proyectofinalmanom#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "nodemailer": "^6.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
