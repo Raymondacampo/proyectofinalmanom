@@ -36,12 +36,12 @@ app.engine(
          }
      });
         transporter.verify().then(()=> {
-     //    console.log('Correo listo para enviar');
+         console.log('Correo listo para enviar');
     });
 
-    app. get ('/',(req, res)=>{
+    app. get ('/', (req, res)=>{
         res.render('home',{
-            ruta:"/macdalystyles/Karibeño.css"
+            ruta:"/macdalystyle/Karibeño.css"
         });
     })
 
@@ -58,18 +58,20 @@ app.engine(
             <h1>Solicita la siguiente información:</h1>
         <h1>${req.body.message}</h1>` // html body
       });
+        console.log('Mensaje enviado...');
         res.redirect('/');
     })
     
+
     app.get ('/formulario',(req, res)=>{
         res.render('formulario',{
-            ruta:'/macdalystyles/formulario.css'
+            ruta:'/macdalystyle/formulario.css'
         });
     })
     
     app.get ('/images',(req, res)=>{
         res.render('images',{
-            ruta:'/macdalystyles/images.css'
+            ruta:'/macdalystyle/images.css'
         })
     })
  
