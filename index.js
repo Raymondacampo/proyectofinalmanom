@@ -3,12 +3,7 @@ const hbs = require('express-handlebars')
 const path = require('path');
 const app = express();
 const nodemailer = require('nodemailer');
-const { rejects } = require('assert');
 require('dotenv').config();
-
-app.use((req, res)=>{
-    res.render('404');
-});
 
 const port = process.env.PORT || 3000;
 
@@ -31,23 +26,26 @@ app.engine(
     }))
   
     
+     const transporter = nodemailer.createTransport({
+         host:'smtp.gmail.com', 
+         port: 465,
+         secure: true, 
+         auth: {
+         user: process.env.MAIL_USER, 
+         pass: process.env.MAIL_PASS 
+         }
+     });
+        transporter.verify().then(()=> {
+     //    console.log('Correo listo para enviar');
+    });
+
     app. get ('/',(req, res)=>{
         res.render('home',{
             ruta:"/macdalystyles/Karibeño.css"
         });
     })
-    
-    const transporter = nodemailer.createTransport({
-        host:'smtp.gmail.com', 
-        port: 587,
-        secure: false, 
-        auth: {
-        user: process.env.MAIL_USER, pass: process.env.MAIL_PASS, 
-        }, tls:{rejectsUnauthorized:false},});
-        transporter.verify().then(()=> {console.log('Correo listo para enviar')
-    });
 
-    app. post ('/formulario', async(req, res)=>{
+    app.post ('/formulario', async(req, res)=>{
          // send mail with defined transport object
         await transporter.sendMail({
         from: process.env.MAIL_USER, // sender address
@@ -63,18 +61,22 @@ app.engine(
         res.redirect('/');
     })
     
-    app. get ('/formulario',(req, res)=>{
+    app.get ('/formulario',(req, res)=>{
         res.render('formulario',{
             ruta:'/macdalystyles/formulario.css'
         });
     })
     
-    app. get ('/images',(req, res)=>{
+    app.get ('/images',(req, res)=>{
         res.render('images',{
             ruta:'/macdalystyles/images.css'
         })
     })
  
+    app.use((req, res)=>{
+        res.render('404');
+    });
+
     app.listen(port, ()=>{
         console.log(`Server running on http://localhost:${port}`)
     })
